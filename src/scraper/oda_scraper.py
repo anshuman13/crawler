@@ -35,9 +35,9 @@ class OdaScraper(BaseScraper):
         if is_success_response(response):
             soup = bs4.BeautifulSoup(response.text, "html.parser")
             self.extract(soup)
-            # h4_tags = soup.findAll('h4', {'class': 'child-category-headline'})
-            # for h4_tag in h4_tags:
-            #     self.extract_link(h4_tag)
+            h4_tags = soup.findAll('h4', {'class': 'child-category-headline'})
+            for h4_tag in h4_tags:
+                self.extract_link(h4_tag)
 
     def scrape(self) -> None:
         logger.info("Fetching Oda data...")

@@ -1,3 +1,5 @@
 venv/
 src/results
 .DS_Store
+.idea/
+__pycache__/
